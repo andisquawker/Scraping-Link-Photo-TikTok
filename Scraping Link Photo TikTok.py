@@ -62,11 +62,11 @@ try:
 
         # Tunggu agar konten termuat
         WebDriverWait(driver, 10).until(
-            EC.presence_of_all_elements_located((By.CLASS_NAME, 'css-13fa1gi-DivWrapper.e1cg0wnj1'))
+            EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[data-e2e="user-post-item"]'))
         )
 
         # Temukan elemen video
-        div_elements = driver.find_elements(By.CLASS_NAME, 'css-13fa1gi-DivWrapper.e1cg0wnj1')
+        div_elements = driver.find_elements(By.CSS_SELECTOR, 'div[data-e2e="user-post-item"]')
         for div in div_elements:
             links = div.find_elements(By.TAG_NAME, 'a')
             for link in links:
